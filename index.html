@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Mauricio Oporto</title>
+        <meta name="description" content="Mauricio Oporto is a professional
+          web developer specializing in full-stack development.
+          He has extensive experience with Ruby, Rails, JavaScript,
+          and building web applications.">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i">
+        <!-- Font awesome CSS -->
+        <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/prism-atom-dark.css" type="text/css" media="screen"/>
+
+        <script type="text/javascript" src="js/prism.js"></script>
+        <script type="text/javascript" src="js/prism.ruby.js"></script>
+    </head>
+    <body>
+        <div class="about-container">
+          <ul>
+            <li><a href="#" class="nav-link">ABOUT</a></li>
+            <li><a href="#code-samples" class="nav-link">CODE SAMPLES</a></li>
+            <li><a href="#web-apps" class="nav-link">WEB APPS</a></li>
+            <li><a href="#skills-and-tools" class="nav-link">SKILLS &amp; TOOLS</a></li>
+            <li class="hire-me"><a href="#hire-me" class="nav-link">HIRE ME</a></li>
+          </ul>
+          <div class="about">
+              <img src="images/me.jpg" class="me" alt="mauricio-oporto-photo">
+
+              <h1>Mauricio Oporto</h1>
+
+              <h2>FULL STACK WEB DEVELOPER</h2>
+              <hr class="grey"/>
+
+              <p class="bio">
+                  Mauricio oporto is a Full Stack Web Developer<br> You will find here my skills acquired during my training,<br> self-taught and during my internships. Computer science is above all a passion, which is why I dedicate
+                  Much of my time. <br> I chose to specialize on JavaScript.
+              </p>
+          </div>
+        </div>
+
+        <h3 id="code-samples">Code Snippets</h3>
+        <hr class="yellow">
+
+        <div class="box">
+            <h4>Split String</h4>
+            <p>
+                This javascript program splits the string into pairs of two characters.<br>
+                If the string contains even number of  characters return ['ab', 'cd', 'ef']<br>
+                If the string contains an odd number of characters return ['ab', 'c_']
+
+            </p>
+        </div>
+        <div class="box">
+<pre><code class="language-javascript">
+  function solution(str) {
+    var ch = str.split("");
+    var letters = str.match(/.{1,2}/g) || [];
+
+    if (ch.length % 2 === 0) {
+        return letters;
+    } else {
+        letters[letters.length - 1] += "_";
+        return letters;
+    }
+  };
+</code></pre>
+
+        </div>
+
+        <br class="clear"/>
+
+        <div class="box">
+<pre><code class="language-ruby">
+  puts &quot;Enter a number &quot;
+  num = gets.chomp.to_i
+
+  digit = num % 10
+
+  if num &gt; 10 &amp;&amp; num &lt; 14
+    suffix = 'th'
+  elsif digit == 1
+    suffix = 'st'
+  elsif digit == 2
+    suffix = 'nd'
+  elsif digit == 3
+    suffix = 'rd'
+  else
+    suffix = 'th'
+  end
+
+  puts &quot;That's the #{num}#{suffix} item!&quot;
+</code></pre>
+        </div>
+        <div class="box">
+            <h4>Ordinal Challenge</h4>
+            <p>
+                This ruby program will convert a plain number to the ordinal of the number. So for example, if the user enters 2, it will display 2nd, if the user enters 3, it will display 3rd, etc.
+            </p>
+        </div>
+
+        <br class="clear"/>
+
+        <div class="box">
+            <h4>Find the smallest number you can get</h4>
+            <p>
+              This javascript program have a positive number n consisting of digits. You can do at most one operation:
+              Choosing the index of a digit in the number, remove this digit at that index and insert it back to another place
+              in the number.
+            </p>
+            <p>
+              Example:<br><br>
+              i) smallest(261235) --> [126235, 2, 0] <br>
+              126235 is the smallest number gotten by taking 1 at index 2 and putting it at index 0 <br>
+
+              ii) smallest(209917) --> [29917, 0, 1] <br>
+              29917 is the smallest number gotten by taking 2 at index 0 and putting it at index 1 which gave 029917 which is the number 29917.
+            </p>
+        </div>
+        <div class="box">
+<pre><code class="language-javascript">
+  function smallest(n) {
+    var arr = n.toString();
+    var result = [+n,0,0];
+    var tempArray = [];
+
+    for (var i = 0; i < arr.length; i++) {
+      for (var j = 0; j < arr.length; j++) {
+          tempArray = +move(arr.split(""), i, j).join("");
+          if (tempArray < result[0]) {
+            result = [tempArray, i, j];
+          }
+      }
+    }
+    return result;
+  }
+
+  function move(array, oldIndex, newIndex) {
+     array.splice(newIndex, 0, array.splice(oldIndex, 1)[0]);
+     return array;
+  }
+</code></pre>
+        </div>
+
+        <br class="clear"/>
+
+        <h3 id="web-apps">Web Apps</h3>
+        <hr class="yellow" />
+
+        <div class="box">
+          <h4>Reservation App</h4>
+          <img src="images/reservation.png" class="full-width" alt="reservation-app" />
+        </div>
+        <div class="box">
+          <h4>Les Mécènes du numérique</h4>
+          <img src="images/mecenes.png" class="full-width" alt="les-mecenes-du-numerique-app" />
+      </div>
+      <br class="clear" />
+
+      <div class="box">
+        <h4>MyRecipes App</h4>
+        <img src="images/recipes.png" class="full-width" alt="myrecipes-app" />
+      </div>
+      <div class="box">
+        <h4>Postcode Finder</h4>
+        <img src="images/postcodeFinder.png" class="full-width" alt="postcode-finder-app" />
+      </div>
+      <br class="clear" />
+      <div class="box">
+        <h4>Weather Predictor</h4>
+        <img src="images/weatherPredictor.png" class="full-width" alt="weather-predictor-app" />
+      </div>
+      <div class="box">
+        <h4>Secret Diary</h4>
+        <img src="images/secretDiary.png" class="full-width" alt="secret-diary-app" />
+      </div>
+
+      <br class="clear" />
+
+      <h3 id="skills-and-tools">Skills &amp; Tools</h3>
+      <hr class="yellow" />
+
+      <p class="skills-and-tools">
+        Mauricio has developed proficiency and expertise
+        in the following programming languages and
+        comfort with the following tools.
+      </p>
+      <div class="icons">
+        <img src="images/docker.png" class="docker-img" alt="docker-img" />
+        <img src="images/trello.png" class="icon" alt="trello-img" />
+        <img src="images/slack.png" class="icon" alt="slack-img" />
+        <img src="images/svc.png" class="icon" alt="svc-img" />
+        <img src="images/webstorm.png" class="webstorm-img" alt="webstorm-img" />
+        <br class="clear" />
+        <img src="images/skills.png" class="icon" alt="skills-img" />
+      </div>
+
+      <div class="contact-me" id="hire-me">
+        <h3 class="contact-headline">Contact</h3>
+        <hr class="yellow" />
+        <p class="contact-info">
+          Currently entertaining new opportunities.
+          Please get in touch via email:
+        </p>
+
+        <p>
+          <a href="mailto:fmod@the-dsw.com" class="contact-link">
+            fmod@the-dsw.com
+          </a>
+        </p>
+        <p>
+          <a href="https://www.linkedin.com/in/mauricio-oporto/" target="_blank">
+              <i class="fa fa-linkedin-square fa-3x" style="color:#007bb6"></i>
+          </a>
+          <a href="https://github.com/the-dsw" target="_blank">
+              <i class="fa fa-github fa-3x" style="color:#D34836"></i>
+          </a>
+        </p>
+      </div>
+
+    </body>
+</html>
